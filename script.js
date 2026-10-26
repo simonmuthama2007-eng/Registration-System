@@ -1,10 +1,6 @@
 
 "use strict";
 
-// ==========================================
-// 1. GET REFERENCES TO HTML ELEMENTS
-// ==========================================
-
 const form = document.getElementById("regform");
 
 const nameInput = document.getElementById("name");
@@ -79,10 +75,6 @@ if (
         "Some HTML elements are missing. Check the element IDs."
     );
 }
-
-// ==========================================
-// 2. VALIDATION HELPER FUNCTIONS
-// ==========================================
 
 function showError(fieldName, message) {
     errorElements[fieldName].textContent = message;
@@ -229,10 +221,6 @@ function validateField(fieldName) {
     return false;
 }
 
-// ==========================================
-// 3. CLEAR ERRORS AS USERS FIX FIELDS
-// ==========================================
-
 Object.keys(fields).forEach(fieldName => {
     const field = fields[fieldName];
 
@@ -259,10 +247,6 @@ Object.keys(fields).forEach(fieldName => {
     }
 });
 
-// ==========================================
-// 4. UPDATE THE MEMBER COUNTER
-// ==========================================
-
 function updateMemberCounter() {
     const members = memberList.querySelectorAll(".member-item");
 
@@ -283,10 +267,6 @@ function updateMemberCounter() {
         emptyNote.remove();
     }
 }
-
-// ==========================================
-// 5. REGISTER A MEMBER
-// ==========================================
 
 function registerMember() {
     const member = {
@@ -355,10 +335,6 @@ function registerMember() {
     successMsg.classList.remove("hidden");
 }
 
-// ==========================================
-// 6. CAPTURE FORM SUBMISSION
-// ==========================================
-
 form.addEventListener("submit", event => {
     event.preventDefault();
 
@@ -394,10 +370,6 @@ form.addEventListener("submit", event => {
     clearAllErrors();
 });
 
-// ==========================================
-// 7. DARK MODE TOGGLE
-// ==========================================
-
 darkModeButton.addEventListener("click", () => {
     const darkModeIsActive = document.body.classList.toggle("dark");
 
@@ -410,10 +382,6 @@ darkModeButton.addEventListener("click", () => {
         String(darkModeIsActive)
     );
 });
-
-// ==========================================
-// 8. INITIALIZE THE PAGE
-// ==========================================
 
 updateMemberCounter();
 
